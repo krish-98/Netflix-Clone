@@ -1,7 +1,11 @@
+import Navbar from "./components/Navbar"
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-4xl text-blue-100">Hello</h1>
+      <h1>
+        <Navbar />
+      </h1>
     </div>
   )
 }
