@@ -1,16 +1,47 @@
+import { useEffect, useState } from "react"
+
 const Navbar = () => {
+  const [show, setShow] = useState(false)
+
+  const transistionNavbar = () => {
+    if (window.scrollY > 100) {
+      setShow(true)
+    } else {
+      setShow(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", transistionNavbar)
+
+    return () => {
+      window.removeEventListener("scroll", transistionNavbar)
+    }
+  }, [])
+
+  console.log(show)
+
   return (
-    <div className="flex justify-between items-center p-4 z-[100] absolute w-full">
-      <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
-        Netflix
-      </h1>
-      <div>
-        <button className="text-white pr-4">Sign In</button>
-        <button className="bg-red-600 px-6 py-2 rounded cursor-pointer text-white">
-          Sign Up
-        </button>
+    <nav
+      className={`fixed top-0 w-full h-[30] p-4 z-[100] ${
+        show && "bg-black"
+      } transition-all duration-500`}
+    >
+      <div className="flex justify-between items-center">
+        <img
+          className="w-32 object-contain pl-5 cursor-pointer"
+          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+          alt="logo"
+        />
+        {/* fixed top-[10] left-0 */}
+        <img
+          className=" w-8 object-contain cursor-pointer"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="account"
+        />
+        {/* fixed right-5 */}
       </div>
-    </div>
+    </nav>
   )
 }
 export default Navbar

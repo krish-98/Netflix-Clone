@@ -1,12 +1,18 @@
-import Navbar from "./components/Navbar"
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
 
 const App = () => {
+  const user = { name: "Murali Krishnan" }
   return (
-    <div>
-      <h1>
-        <Navbar />
-      </h1>
-    </div>
+    <>
+      {!user ? (
+        <h1>Login</h1>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      )}
+    </>
   )
 }
 export default App
