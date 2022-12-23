@@ -1,12 +1,13 @@
 import Navbar from "../components/Navbar"
+import Banner from "../components/Banner"
 
 const Home = () => {
   return (
-    <div className="h-[1000vh]">
+    <div>
       {/* Nav */}
       <Navbar />
 
-      {/* Banner */}
+      <Banner />
 
       {/* Row */}
       {/* Row */}

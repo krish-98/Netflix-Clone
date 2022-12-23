@@ -19,8 +19,6 @@ const Navbar = () => {
     }
   }, [])
 
-  console.log(show)
-
   return (
     <nav
       className={`fixed top-0 w-full h-[30] p-4 z-[100] ${
@@ -33,13 +31,11 @@ const Navbar = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
           alt="logo"
         />
-        {/* fixed top-[10] left-0 */}
         <img
           className=" w-8 object-contain cursor-pointer"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt="account"
         />
-        {/* fixed right-5 */}
       </div>
     </nav>
   )
