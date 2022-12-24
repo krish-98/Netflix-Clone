@@ -34,7 +34,7 @@ const Banner = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div className="flex flex-col justify-center h-full gap-4 pl-10 ">
+      <div className="flex flex-col justify-center h-full gap-4 pl-10">
         <div>
           <h1 className="text-5xl font-bold">
             {movie?.title || movie?.name || movie?.original_name}
@@ -50,12 +50,12 @@ const Banner = () => {
           </button>
         </div>
 
-        <p className="w-[45rem] max-w-[360px] h-[80px]">
+        <p className="w-[45rem] max-w-[300px] lg:max-w-[45rem] h-[80px]">
           {truncate(movie?.overview, 150)}
         </p>
       </div>
 
-      <div className="h-[7.8rem] bg-gradient-to-tr from-[#373737]/5 to-[#111]" />
+      <div className="h-[7.8rem] bg-gradient-to-t from-[#373737]/5 to-[#111]" />
     </header>
   )
 }
