@@ -1,15 +1,18 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
+import Profile from "./pages/Profile"
+import LoginScreen from "./pages/LoginScreen"
 
 const App = () => {
-  const user = { name: "Murali Krishnan" }
+  const user = null
   return (
     <>
       {!user ? (
-        <h1>Login</h1>
+        <LoginScreen />
       ) : (
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       )}
     </>

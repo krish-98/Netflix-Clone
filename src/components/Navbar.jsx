@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const [show, setShow] = useState(false)
@@ -26,16 +27,21 @@ const Navbar = () => {
       } transition-all duration-500`}
     >
       <div className="flex justify-between items-center">
-        <img
-          className="w-32 object-contain pl-5 cursor-pointer"
-          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
-          alt="logo"
-        />
-        <img
-          className=" w-8 object-contain cursor-pointer"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-          alt="account"
-        />
+        <Link to="/">
+          <img
+            className="w-32 object-contain pl-5 cursor-pointer"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+            alt="logo"
+          />
+        </Link>
+
+        <Link to="/profile">
+          <img
+            className=" w-8 object-contain cursor-pointer"
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            alt="account"
+          />
+        </Link>
       </div>
     </nav>
   )
