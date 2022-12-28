@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import subscribeReducer from "../features/subscribeSlice"
+import userReducer from "../features/userSlice"
 
 const store = configureStore({
   reducer: {
-    subscribe: subscribeReducer,
+    user: userReducer,
   },
 })
 
