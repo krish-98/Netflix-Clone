@@ -24,7 +24,6 @@ const SignIn = () => {
   const register = async () => {
     try {
       const data = await createUserWithEmailAndPassword(auth, email, password)
-      // const data = await signInWithEmailAndPassword(auth, email, password)
       return data
     } catch (error) {
       alert(error.message)

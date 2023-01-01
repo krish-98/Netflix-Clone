@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import SignIn from "./SignIn"
 
 const LoginScreen = () => {
   const [signIn, setSignIn] = useState(false)
-  const navigate = useNavigate()
+
   return (
     <div
       style={{
@@ -32,7 +32,6 @@ const LoginScreen = () => {
                 <button
                   onClick={() => {
                     setSignIn(true)
-                    navigate("/login")
                   }}
                   className="bg-[#e50914] text-white font-semibold px-4 py-2 hover:text-[#e50914] hover:bg-white transition-all duration-300"
                 >
@@ -53,15 +52,17 @@ const LoginScreen = () => {
                 membership.
               </p>
 
-              <div className="w-full text-center">
-                <form>
-                  <input className="py-2 lg:py-4" type="text" />
+              <div className=" text-center">
+                <form className="w-full">
+                  <input
+                    className="py-2 lg:py-4 lg:w-[30%] rounded-l-md"
+                    type="text"
+                  />
                   <button
                     onClick={() => {
                       setSignIn(true)
-                      navigate("/login")
                     }}
-                    className="bg-[#e50914] text-white p-2 px-3 lg:p-4 uppercase"
+                    className="bg-[#e50914] text-white p-2 px-3 lg:p-4 uppercase lg:w-[20%] xl:w-[10%] rounded-r-md"
                   >
                     Get Started
                   </button>

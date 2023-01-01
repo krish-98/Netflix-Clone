@@ -1,8 +1,17 @@
 import Navbar from "../components/Navbar"
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { signOut } from "firebase/auth"
+import { auth } from "../firebase.config"
 
 const Profile = () => {
   const { user } = useSelector((state) => state.user)
+  const navigate = useNavigate()
+
+  const logout = () => {
+    signOut(auth)
+    navigate("/")
+  }
 
   return (
     <div className="flex items-center justify-center">
@@ -55,7 +64,9 @@ const Profile = () => {
               </div>
             </div>
 
-            <button className="bg-[#e50914] w-full py-3 mt-4">Sign Out</button>
+            <button onClick={logout} className="bg-[#e50914] w-full py-3 mt-4">
+              Sign Out
+            </button>
           </div>
         </div>
       </div>
