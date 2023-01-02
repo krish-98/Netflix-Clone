@@ -67,7 +67,10 @@ const SignIn = () => {
 
           <h4 className="text-center space-x-1">
             <span className="text-[#8c8c8c]">New to Netflix?</span>
-            <span className="cursor-pointer hover:underline" onClick={register}>
+            <span
+              className="cursor-pointer text-lg hover:underline"
+              onClick={register}
+            >
               Sign up Now
             </span>
           </h4>
